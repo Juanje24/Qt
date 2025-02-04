@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     SysInfo::instance().init();
     QWidget *mainWidget = new QWidget(this);
-    QVBoxLayout *layout = new QVBoxLayout(mainWidget);
+    QHBoxLayout *layout = new QHBoxLayout(mainWidget);
     layout->addWidget(&mCpuWidget);
     layout->addWidget(&mMemoryWidget);
     setCentralWidget(mainWidget);
