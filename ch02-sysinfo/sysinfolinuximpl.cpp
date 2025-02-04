@@ -59,3 +59,4 @@ double SysInfoLinuxImpl::cpuLoadAverage()
     return qBound(0.0, percent, 100.0);
 
 }
+

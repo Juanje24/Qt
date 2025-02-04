@@ -5,8 +5,8 @@
 SysInfoWidget::SysInfoWidget(QWidget *parent,
                              int startDelayMs,
                              int updateSeriesDelayMs):
-     QWidget(parent),
-      mChartView(this)
+    QWidget(parent),
+    mChartView(this)
 {
     mRefreshTimer.setInterval(updateSeriesDelayMs);
     connect(&mRefreshTimer, &QTimer::timeout,
@@ -25,3 +25,4 @@ QChartView& SysInfoWidget::chartView()
 {
     return mChartView;
 }
+
