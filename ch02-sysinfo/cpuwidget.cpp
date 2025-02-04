@@ -16,6 +16,8 @@ CpuWidget::CpuWidget(QWidget* parent) :
     QChart* chart = chartView().chart();
     chart->addSeries(mSeries);
     chart->setTitle("CPU average load");
+
+
 }
 
 void CpuWidget::updateSeries()

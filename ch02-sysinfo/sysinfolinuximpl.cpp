@@ -16,12 +16,10 @@ double SysInfoLinuxImpl::memoryUsed()
     struct sysinfo memInfo;
     sysinfo(&memInfo);
     qulonglong totalMemory = memInfo.totalram;
-    totalMemory += memInfo.totalswap;
-    totalMemory *= memInfo.mem_unit;
+
 
     qulonglong totalMemoryUsed = memInfo.totalram - memInfo.freeram;
-    totalMemoryUsed += memInfo.totalswap - memInfo.freeswap;
-    totalMemoryUsed *= memInfo.mem_unit;
+
 
     double percent = (double)totalMemoryUsed /
                      (double)totalMemory * 100.0;

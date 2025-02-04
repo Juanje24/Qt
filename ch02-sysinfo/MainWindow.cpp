@@ -6,13 +6,16 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow),
-    mCpuWidget(this)
+    mCpuWidget(this),
+    mMemoryWidget(this)
 {
     ui->setupUi(this);
     SysInfo::instance().init();
-    ui->centralwidget->layout()->addWidget(&mCpuWidget);
-    ui->centralwidget->layout()->addWidget(&mMemoryWidget);
-
+    QWidget *mainWidget = new QWidget(this);
+    QVBoxLayout *layout = new QVBoxLayout(mainWidget);
+    layout->addWidget(&mCpuWidget);
+    layout->addWidget(&mMemoryWidget);
+    setCentralWidget(mainWidget);
 }
 
 MainWindow::~MainWindow()
