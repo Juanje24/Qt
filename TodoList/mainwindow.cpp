@@ -66,8 +66,3 @@ void MainWindow::updateStatus()
             .arg(todoCount)
             .arg(completedCount));
 }
-
-
-
-
-
